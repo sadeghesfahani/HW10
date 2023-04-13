@@ -19,7 +19,7 @@ public class Map<T, U> {
         // check if already exists
         for (Pair<T, U> p : list) {
             if (p.getKey().equals(pair.getKey())) {
-                return;
+                throw new IllegalArgumentException("Key already exists");
             }
         }
         list.add(pair);
@@ -50,7 +50,8 @@ public class Map<T, U> {
                 return pair.get(key);
             }
         }
-        return null;
+        throw new IllegalArgumentException("Key does not exist");
+        // return null
     }
 
 
