@@ -54,6 +54,10 @@ public class Map<T, U> {
         // return null
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Map{" +
+                "list=" + list +
+                '}';
+    }
 }
