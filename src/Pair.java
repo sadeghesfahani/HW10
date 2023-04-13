@@ -1,10 +1,11 @@
+import java.util.HashMap;
 import java.util.Map;
 
 public class Pair<T , U> {
-    private Map<T,U> pair;
+    private final Map<T,U> pair = new HashMap<>();
 
     public void set(T x, U y) {
-        pair.put(x, y);
+        this.pair.put(x, y);
     }
 
     public U get(T x) {

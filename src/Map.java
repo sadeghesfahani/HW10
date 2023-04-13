@@ -1,13 +1,18 @@
-import java.util.ArrayList;
-import java.util.Objects;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Map<T, U> {
 
-    private ArrayList<Pair<T, U>> list;
+    private ArrayList<Pair<T, U>> list = new ArrayList<>();
 
     public Map(ArrayList<Pair<T, U>> list) {
         this.list = list;
+    }
+    public Map(){
+        
+    }
+
+    public Map(Pair<T, U> pair) {
+        this.list.add(pair);
     }
 
     public void add(Pair<T, U> pair) {
@@ -29,8 +34,10 @@ public class Map<T, U> {
         if (!(obj instanceof Map other)) {
             return false;
         }
+        Set<?> set1 = new HashSet<>(this.list);
+        Set<?> set2 = new HashSet<>(other.list);
 
-        return this.list.equals(other.list);
+        return set1.equals(set2);
     }
 
     public void assign(Map<T, U> other) {
