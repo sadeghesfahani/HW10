@@ -11,6 +11,8 @@ public class Main {
         map2.add(pair1);
 
         System.out.println(map1.equals(map2));
+        System.out.println(map1.get(1));
+        System.out.println(map1);
 
     }
 }
